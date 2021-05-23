@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
+    background-color: #3c8dbc;
+}
+
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
+    background-color: #3c8dbc !important;
+    color: black !important;
+    font-weight: bold;
+}
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
+    background-color: #3c8dbc !important;
+    color: black !important;
+    font-weight: bold;
+}

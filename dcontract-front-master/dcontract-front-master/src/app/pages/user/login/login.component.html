@@ -1,0 +1,60 @@
+<div class="login-wrapper login-page">
+  <div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+        <a routerLink='/' class="h1"><b>D-Contract.</b>AI</a>
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">Identification</p>
+
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" class='myform' action="#" method="post">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" id='email' name="name" placeholder="Email" ngModel required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Mot de passe" id='password' ngModel required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="mb-2">
+                <a routerLink='/forgot-password'>Mot de passe oublié</a>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" [disabled]="f.invalid" class="btn btn-success btn-block">Se connecter</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+
+        <div class="social-auth-links text-center mb-3">
+          <p>- OR -</p>
+          <a href="#" class="btn btn-block btn-primary">
+            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+          </a>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+          </a>
+        </div>
+
+        <p class="mt-2"> Vous n'avez pas encore de compte ? <a routerLink='/register'>s'inscrire</a></p>
+
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>

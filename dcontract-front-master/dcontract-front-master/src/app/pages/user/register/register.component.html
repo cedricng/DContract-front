@@ -1,0 +1,65 @@
+<div class="register-wrapper register-page">
+    <div class="register-box register-page">
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <a routerLink='/' class="h1"><b>D-Contract.</b> AI</a>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg">Création de compte</p>
+
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="../../index.html" method="post">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="name" placeholder="Nom complet" ngModel required >
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" name="email" placeholder="Email" ngModel required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" name="password" placeholder="Mot de passe" ngModel required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" name="password_confirmation" placeholder="Confirmer le mot de passe" ngModel required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12" style="margin-bottom: 10px">
+                <div class="icheck-primary">
+                  <input type="checkbox" id="agreeTerms" name="terms" value="agree" ngModel required>
+                  <label for="agreeTerms">
+                   Je suis d'accord <a href="#">termes et règlements</a>
+                  </label>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-12">
+                <button type="submit" class="btn btn-success btn-block" [disabled]="f.invalid">S'inscrire</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+         <p class="mt-2">Déjà un compte ? <a routerLink='/login' class="text-center">se connecter</a></p>
+        </div>
+        <!-- /.form-box -->
+      </div><!-- /.card -->
+    </div>
+    </div>
+    <!-- /.register-box -->

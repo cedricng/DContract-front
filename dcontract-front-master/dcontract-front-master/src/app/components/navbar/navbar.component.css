@@ -1,0 +1,8 @@
+.navbar-white {
+    background-color: #3c8dbc;
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}

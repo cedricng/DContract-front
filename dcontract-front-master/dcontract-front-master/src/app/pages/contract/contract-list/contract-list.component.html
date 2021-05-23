@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<app-footer></app-footer>
+<div class="content-wrapper iframe-mode" data-widget="iframe" data-loading-screen="750">
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Projet 1</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <button type="button" *ngIf="!showButton" (click)="addContract('new')" class="btn btn-outline-primary float-sm-right"><i class="fa fa-plus"></i> Nouveau</button>
+                <button type="button" *ngIf="showButton" (click)="addContract('cancel')" class="btn btn-outline-danger float-sm-right"><i class="fa fa-window-close"></i> Annuler</button>
+
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+
+      <ng-container *ngIf="showButton">
+        <div class="container-drag" appDnd (fileDropped)="onFileDropped($event)">
+            <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+            <img src="assets/img/dnd/icons8-upload-to-the-cloud.svg" alt="">
+            <h3>Drag and drop file here</h3>
+            <h3>or</h3>
+            <label for="fileDropRef">Browse for file</label>
+          </div>
+          <div class="files-list">
+            <div class="single-file" *ngFor="let file of files; let i = index">
+              <img src="assets/img/dnd/ic-file.svg" width="45px" alt="file">
+              <div class="info">
+                <h4 class="name">
+                  {{ file?.name }}
+                </h4>
+                <p class="size">
+                  {{ formatBytes(file?.size) }}
+                </p>
+                <app-progress [progress]="file?.progress" ></app-progress>
+              </div>
+              <img src="assets/img/dnd/ic-delete-file.svg" class="delete" width="20px" alt="file" (click)="deleteFile(i)">
+            </div>
+            <div class="mt-2" *ngIf="shwoButtonLoad">
+                <button type="button" class="btn btn-info btn-block btn-flat" (click)="addContract('cancel')"><i class="fa fa-upload"></i> Charger</button>
+            </div>
+          </div>
+      </ng-container>
+
+      <ng-container *ngIf="!showButton">
+        <table id="example1" class="table table-bordered table-striped" style='text-align:center; vertical-align:middle'>
+            <thead>
+            <tr>
+              <th>Intitulé</th>
+              <th>Date</th>
+              <th>Objet</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of bucketlist">
+              <td>{{ book }}</td>
+              <td>28/04/2021</td>
+              <td>objet</td>
+              <td><button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i></button></td>
+            </tr>
+            <!--
+            <tr>
+              <td>Contrat 1</td>
+              <td>28/04/2021</td>
+              <td>objet</td>
+              <td><button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i></button></td>
+            </tr>
+            <tr>
+                <td>Contrat 2</td>
+                <td>28/04/2021</td>
+                <td>objet</td>
+                <td><button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i></button></td>
+              </tr>
+              -->
+            </tbody>
+          </table>
+      </ng-container>
+
+</div>
